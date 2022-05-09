@@ -141,8 +141,9 @@ def _run_with_file_output(args: argparse.Namespace) -> None:
         from datetime import datetime
         ts = datetime.utcnow().strftime('%Y-%m-%dT%H-%M-%SZ')
 
-        output = f"/data/memray/{ts}_memray-{os.path.basename(script_name)}.{os.getpid()}.bin"
-        filename = os.path.join(os.path.dirname(script_name), output)
+        output = f"{ts}_memray-{os.path.basename(script_name)}.{os.getpid()}.bin"
+#         filename = os.path.join(os.path.dirname(script_name), output)
+        filename = f"/data/memray/{output}"
     else:
         filename = args.output
 
